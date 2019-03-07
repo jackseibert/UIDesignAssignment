@@ -3,6 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <item
+        android:id="@+id/flaction_add"
+        android:icon="@drawable/ic_add_black_24dp"
+        android:title="@string/flaction_add" />
+    <item
+        android:id="@+id/flaction_delete"
+        android:icon="@drawable/ic_delete_black_24dp"
+        android:title="@string/flaction_delete" />
+    <item
+        android:id="@+id/flaction_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/flaction_settings" />
+    <item
+        android:id="@+id/flaction_email"
+        android:icon="@drawable/ic_email_black_24dp"
+        android:title="@string/flaction_email" />
+    <item
+        android:id="@+id/flaction_sms"
+        android:icon="@drawable/ic_sms_black_24dp"
+        android:title="@string/flaction_sms" />
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"

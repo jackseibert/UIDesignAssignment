@@ -8,8 +8,12 @@
     <string name="action_settings">Settings</string>
     <string name="action_add">Add</string>
     <string name="action_delete">Delete</string>
-    <string name="action_settings">Settings</string>
     <string name="action_email">Email</string>
     <string name="action_sms">SMS</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="flaction_add">Add</string>
+    <string name="flaction_delete">Delete</string>
+    <string name="flaction_settings">Settings</string>
+    <string name="flaction_email">Email</string>
+    <string name="flaction_sms">SMS</string>
 </resources>

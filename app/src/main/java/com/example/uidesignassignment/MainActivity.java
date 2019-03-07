@@ -49,89 +49,127 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    @Override
-    public void onBackPressed() {
+    /*@Override
+    public onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
+    }*/
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent settingsIntent = new Intent(this, SettingsActivity.class);
-            startActivity(settingsIntent);
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.main, menu);
             return true;
         }
-        if (id == R.id.action_add) {
-            Snackbar.make(getWindow().getDecorView(), "Add study mates not implemented", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-            return true;
-        }
-        if (id == R.id.action_delete) {
-            Snackbar.make(getWindow().getDecorView(), "Add study mates not implemented", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-            return true;
-        }
-        if (id == R.id.action_email) {
-            Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setType(("*/*"));
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Hey study partner!");
-            if(emailIntent.resolveActivity(getPackageManager()) != null) {
-                startActivity(emailIntent);
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            // Handle action bar item clicks here. The action bar will
+            // automatically handle clicks on the Home/Up button, so long
+            // as you specify a parent activity in AndroidManifest.xml.
+            int id = item.getItemId();
+
+            //ACTION BAR CODE
+            //noinspection SimplifiableIfStatement
+            if (id == R.id.action_settings) {
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivity(settingsIntent);
+                return true;
             }
-            return true;
-        }
-        if (id == R.id.action_sms) {
-            Intent smsIntent = new Intent(Intent.ACTION_SEND);
-            smsIntent.setType(("*/*"));
-            smsIntent.putExtra(Intent.EXTRA_SUBJECT, "Hey study partner!");
-            if(smsIntent.resolveActivity(getPackageManager()) != null) {
-                startActivity(smsIntent);
+            if (id == R.id.action_add) {
+                Snackbar.make(getWindow().getDecorView(), "Add study mates not implemented", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                return true;
             }
+            if (id == R.id.action_delete) {
+                Snackbar.make(getWindow().getDecorView(), "Add study mates not implemented", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                return true;
+            }
+            if (id == R.id.action_email) {
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                emailIntent.setType(("*/*"));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Hey study partner!");
+                if(emailIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(emailIntent);
+                }
+                return true;
+            }
+            if (id == R.id.action_sms) {
+                Intent smsIntent = new Intent(Intent.ACTION_SEND);
+                smsIntent.setType(("*/*"));
+                smsIntent.putExtra(Intent.EXTRA_SUBJECT, "Hey study partner!");
+                if(smsIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(smsIntent);
+                }
+                return true;
+            }
+
+            return super.onOptionsItemSelected(item);
+        }
+
+        @Override
+        public boolean onNavigationItemSelected(MenuItem item) {
+            // Handle navigation view item clicks here.
+            int id = item.getItemId();
+
+            if (id == R.id.nav_camera) {
+                // Handle the camera action
+            } else if (id == R.id.nav_gallery) {
+
+            } else if (id == R.id.nav_slideshow) {
+
+            } else if (id == R.id.nav_manage) {
+
+            } else if (id == R.id.nav_share) {
+
+            } else if (id == R.id.nav_send) {
+
+            }
+
+
+            //NAVIGATION DRAWER ACTION CODE
+            if (id == R.id.flaction_settings) {
+                Intent settingsIntent = new Intent(this, SettingsActivity.class);
+                startActivity(settingsIntent);
+                return true;
+            }
+            if (id == R.id.flaction_add) {
+                Snackbar.make(getWindow().getDecorView(), "Add study mates not implemented", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                return true;
+            }
+            if (id == R.id.flaction_delete) {
+                Snackbar.make(getWindow().getDecorView(), "Add study mates not implemented", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                return true;
+            }
+            if (id == R.id.flaction_email) {
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                emailIntent.setType(("*/*"));
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Hey study partner!");
+                if(emailIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(emailIntent);
+                }
+                return true;
+            }
+            if (id == R.id.flaction_sms) {
+                Intent smsIntent = new Intent(Intent.ACTION_SEND);
+                smsIntent.setType(("*/*"));
+                smsIntent.putExtra(Intent.EXTRA_SUBJECT, "Hey study partner!");
+                if(smsIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(smsIntent);
+                }
+                return true;
+            }
+
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
             return true;
         }
-
-        return super.onOptionsItemSelected(item);
     }
-
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-}
